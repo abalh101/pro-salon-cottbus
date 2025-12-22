@@ -1,33 +1,188 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Salon Cottbus | Ibrahim Al Hamidi</title>
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <meta name="description" content="Pro Salon Cottbus - Ihr Barbershop am Altmarkt. Professionelle Haarschnitte, Bartpflege und Gesichtspflege ohne Termin.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="img/logo.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="img/logo.jpg">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            salonGreen: '#1a3c34',
+            salonGold: '#c5a059'
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body>
+<body class="bg-stone-50 text-stone-900 font-sans">
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+<div id="status-bar"
+     role="status"
+     class="w-full py-2 text-center text-xs font-bold uppercase tracking-widest transition-colors duration-500">
+</div>
+
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b">
+  <div class="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="img/logo.jpg" alt="Pro Salon Logo" class="w-10 h-10 rounded-full object-cover">
+      <div>
+        <span class="block text-xl font-black italic text-salonGreen uppercase leading-none">Pro Salon</span>
+        <span class="text-[10px] text-stone-400 uppercase tracking-widest">Ibrahim Al Hamidi</span>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus" target="_blank"
+         class="p-2 text-salonGreen hover:text-salonGold transition">
+        <i class="fas fa-map-location-dot text-xl"></i>
+      </a>
+      <a href="tel:+4915753672534"
+         class="bg-salonGreen text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2">
+        <i class="fas fa-phone"></i> Anrufen
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="relative h-[70vh] flex items-center justify-center text-center overflow-hidden bg-black">
+  <video autoplay muted loop playsinline
+         class="absolute inset-0 w-full h-full object-cover opacity-50">
+    <source src="img/1.mp4" type="video/mp4">
+  </video>
+  <div class="relative z-10 px-6 max-w-xl">
+    <h1 class="text-5xl font-black italic uppercase text-white drop-shadow-lg">Pro Salon</h1>
+    <p class="text-xl text-salonGold font-bold italic mt-2">Ohne Termin</p>
+    <p class="text-white/80 text-sm mt-6">
+      Zentral am Altmarkt in Cottbus – umgeben von Shopping & Cafés.
+    </p>
+  </div>
+</header>
+
+<section class="bg-white border-b">
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="p-8 flex flex-col items-center text-center border-r">
+      <i class="fas fa-clock text-2xl text-salonGold mb-3"></i>
+      <h3 class="font-bold uppercase text-sm tracking-widest">Öffnungszeiten</h3>
+      <p class="text-stone-600">Mo. – Sa.: 10:00 – 19:00 Uhr</p>
+      <p class="text-red-500 text-xs uppercase mt-1">Sonntag geschlossen</p>
+    </div>
+    <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus" target="_blank"
+       class="p-8 flex flex-col items-center text-center hover:bg-stone-50 transition">
+      <i class="fas fa-location-dot text-2xl text-salonGold mb-3"></i>
+      <h3 class="font-bold uppercase text-sm tracking-widest">Standort</h3>
+      <p class="text-stone-600">Altmarkt 9, 03046 Cottbus</p>
+      <span class="text-salonGreen text-[10px] font-bold underline mt-2">Route öffnen</span>
+    </a>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-8 border-b">
+  <img src="img/Ibrahim.jpg" alt="Ibrahim Al Hamidi" class="w-40 h-40 rounded-2xl object-cover shadow-lg border-2 border-salonGold">
+  <div class="text-center md:text-left">
+    <h2 class="text-2xl font-black uppercase italic text-salonGreen">Ibrahim Al Hamidi</h2>
+    <p class="text-stone-500 italic uppercase tracking-widest text-xs font-bold mb-2">Inhaber & Experte</p>
+    <p class="text-stone-600">Willkommen im Pro Salon. Wir stehen für präzise Schnitte und traditionelle Barbierkunst direkt im Herzen von Cottbus.</p>
+  </div>
+</section>
+
+<section class="max-w-2xl mx-auto px-6 py-16" id="preise">
+  <h2 class="text-3xl font-black text-center uppercase italic text-salonGreen underline decoration-salonGold decoration-4 underline-offset-8 mb-12">
+    Preisliste
+  </h2>
+
+  <div class="mb-12">
+    <h3 class="text-salonGold font-black uppercase italic border-b pb-2 mb-4">Haare & Bart</h3>
+    <ul class="space-y-3 text-sm">
+      <li class="flex justify-between"><span>Haarschnitt (trocken)</span><span class="font-bold">15 €</span></li>
+      <li class="flex justify-between"><span>Haarschnitt (trocken) + Styling + Rasur</span><span class="font-bold">25 €</span></li>
+      <li class="flex justify-between"><span>Haarschnitt mit Waschen & Föhnen</span><span class="font-bold">18 €</span></li>
+      <li class="flex justify-between"><span>Haarschnitt mit Waschen & Föhnen + Rasur</span><span class="font-bold">28 €</span></li>
+      <li class="flex justify-between italic"><span>Kinderhaarschnitt</span><span class="font-bold">15 €</span></li>
+    </ul>
+  </div>
+
+  <div class="mb-12">
+    <h3 class="text-salonGold font-black uppercase italic border-b pb-2 mb-4">Gesichtspflege</h3>
+    <ul class="space-y-3 text-sm">
+      <li class="flex justify-between"><span>Rasur</span><span class="font-bold">12 €</span></li>
+      <li class="flex justify-between"><span>Augenbrauen zupfen (Fadentechnik)</span><span class="font-bold">5 €</span></li>
+      <li class="flex justify-between"><span>Gesichtshaarentfernung (Wachs & Fadentechnik)</span><span class="font-bold">8 €</span></li>
+      <li class="flex justify-between font-semibold">
+        <span>Gesichtspflegepaket (Dampfer, Peeling, Wachs & Maske)</span>
+        <span class="font-bold">30 €</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="bg-salonGreen text-white p-6 rounded-xl border-l-4 border-salonGold shadow-xl">
+    <h3 class="text-salonGold font-black uppercase italic text-xl mb-2">Pro Salon Paket</h3>
+    <p class="text-xs italic opacity-70 mb-4">
+      Haarschnitt mit Waschen & Föhnen + Rasur + Wachs + Maske + Kopfmassage
+    </p>
+    <p class="text-3xl font-black italic">35 €</p>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-16 border-t border-stone-200">
+  <h2 class="text-3xl font-black text-center uppercase italic text-salonGreen mb-12">Unser Salon</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="overflow-hidden rounded-xl shadow-lg bg-stone-200 aspect-[4/5]">
+      <img src="img/3.jpeg" alt="Innenansicht" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg bg-stone-200 aspect-[4/5]">
+      <img src="img/4.jpg" alt="Atmosphäre" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+    </div>
+    <div class="overflow-hidden rounded-xl shadow-lg bg-stone-200 aspect-[4/5]">
+      <img src="img/2.jpeg" alt="Kinder-Bereich" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+    </div>
+  </div>
+</section>
+
+<footer class="bg-stone-900 text-white py-12 text-center">
+  <p class="text-salonGold font-bold italic uppercase tracking-widest mb-6">Social Media</p>
+  <div class="flex justify-center gap-10 mb-10 text-4xl">
+    <a href="https://www.instagram.com/pro_salon9" target="_blank" class="hover:text-salonGold transition"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@pro.salon4" target="_blank" class="hover:text-salonGold transition"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <p class="text-xs opacity-40 uppercase tracking-[0.3em]">Inhaber</p>
+  <p class="font-bold italic uppercase mb-6">Ibrahim Al Hamidi</p>
+
+  <div class="flex justify-center gap-4 text-[10px] uppercase tracking-widest opacity-50">
+    <a href="impressum.html" class="hover:text-salonGold">Impressum</a>
+    <span>|</span>
+    <a href="#" class="hover:text-salonGold">Datenschutz</a>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    const statusBar = document.getElementById('status-bar');
+    function updateStatus() {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
+      const open = day !== 0 && hour >= 10 && hour < 19;
+      statusBar.textContent = open ? '● Wir haben gerade für Sie geöffnet' : '○ Momentan haben wir geschlossen';
+      statusBar.className = 'w-full py-2 text-center text-xs font-bold uppercase tracking-widest transition-colors duration-500 ' +
+        (open ? 'bg-green-600 text-white' : 'bg-red-600 text-white');
+    }
+    updateStatus();
+    setInterval(updateStatus, 60000);
+  })();
+</script>
 
 </body>
-
 </html>
