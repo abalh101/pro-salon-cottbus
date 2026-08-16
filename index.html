@@ -2,16 +2,20 @@
 <html lang="de" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pro Salon Cottbus | Ibrahim Al Hamidi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <meta name="description" content="Pro Salon Cottbus - Ihr Barbershop am Altmarkt. Professionelle Haarschnitte, Bartpflege und Gesichtspflege ohne Termin.">
+  <title>Barbershop Cottbus am Altmarkt | Pro Salon</title>
+  <meta name="description" content="Pro Salon Cottbus – Barbershop am Altmarkt 9. Professionelle Haarschnitte, Bartpflege und Gesichtspflege ohne Termin.">
+  <meta name="theme-color" content="#1a3c34">
+  <meta name="format-detection" content="telephone=yes">
+
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="img/logo.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="img/logo.jpg">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <script>
     tailwind.config = {
@@ -20,320 +24,672 @@
           colors: {
             salonGreen: '#1a3c34',
             salonGold: '#c5a059'
+          },
+          boxShadow: {
+            soft: '0 12px 35px rgba(0,0,0,0.08)'
           }
         }
       }
     }
   </script>
+
+  <style>
+    html {
+      scroll-padding-top: 76px;
+    }
+
+    body {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-bottom-bar {
+      padding-bottom: max(.35rem, env(safe-area-inset-bottom));
+    }
+
+    .tap-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto !important;
+      }
+
+      .hero-video {
+        display: none;
+      }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Pro Salon",
+    "image": "https://abalh101.github.io/pro-salon-cottbus/img/logo.jpg",
+    "url": "https://abalh101.github.io/pro-salon-cottbus/",
+    "telephone": "+49 355 12166380",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Altmarkt 9",
+      "postalCode": "03046",
+      "addressLocality": "Cottbus",
+      "addressCountry": "DE"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "19:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/pro_salon9",
+      "https://www.tiktok.com/@pro.salon4"
+    ]
+  }
+  </script>
 </head>
 
-<body class="bg-stone-50 text-stone-900 font-sans">
+<body class="bg-stone-50 text-stone-900 font-sans pb-20 md:pb-0">
 
-<div id="status-bar"
-     role="status"
-     class="w-full py-2 text-center text-xs font-bold uppercase tracking-widest transition-colors duration-500">
-</div>
+  <!-- Öffnungsstatus -->
+  <div id="status-bar"
+       role="status"
+       aria-live="polite"
+       class="w-full px-4 py-2 text-center text-[13px] font-bold transition-colors duration-300">
+  </div>
 
-<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b">
-  <div class="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
-    <div class="flex items-center gap-3">
-      <img src="img/logo.jpg" alt="Pro Salon Logo" class="w-10 h-10 rounded-full object-cover">
-      <div>
-        <span class="block text-xl font-black italic text-salonGreen uppercase leading-none">Pro Salon</span>
-        <span class="text-[10px] text-stone-400 uppercase tracking-widest">Ibrahim Al Hamidi</span>
-      </div>
-    </div>
-    <div class="flex gap-2">
-      <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus" target="_blank"
-         class="p-2 text-salonGreen hover:text-salonGold transition">
-        <i class="fas fa-map-location-dot text-xl"></i>
+  <!-- Kompakter Mobile-Header -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200">
+    <div class="max-w-screen-xl mx-auto px-4 h-16 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <img src="img/logo.jpg"
+             alt="Pro Salon Logo"
+             width="44"
+             height="44"
+             class="w-11 h-11 rounded-full object-cover shadow-sm">
+        <div>
+          <span class="block text-xl font-black italic text-salonGreen uppercase leading-none">
+            Pro Salon
+          </span>
+          <span class="block mt-1 text-xs text-stone-500 font-semibold">
+            Altmarkt · Cottbus
+          </span>
+        </div>
       </a>
-      <a href="tel:+4915753672534"
-         class="bg-salonGreen text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2">
-        <i class="fas fa-phone"></i> Anrufen
+
+      <a href="tel:+4935512166380"
+         class="tap-target bg-salonGreen text-white px-4 rounded-full text-sm font-bold flex items-center gap-2 active:scale-95 transition"
+         aria-label="Pro Salon anrufen">
+        <i class="fas fa-phone"></i>
+        <span class="hidden sm:inline">Anrufen</span>
       </a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<header class="relative h-[70vh] flex items-center justify-center text-center overflow-hidden bg-black">
-  <video autoplay muted loop playsinline
-         class="absolute inset-0 w-full h-full object-cover opacity-50">
-    <source src="img/2.mov" type="video/mp4">
-  </video>
-  <div class="relative z-10 px-6 max-w-xl">
-    <h1 class="text-5xl font-black italic uppercase text-white drop-shadow-lg">Pro Salon</h1>
-    <p class="text-xl text-salonGold font-bold italic mt-2">Ohne Termin</p>
-    <p class="text-white/80 text-sm mt-6">
-      Zentral am Altmarkt in Cottbus – umgeben von Shopping & Cafés.
-    </p>
-  </div>
-</header>
+  <main>
+    <!-- Hero -->
+    <header class="relative min-h-[54svh] md:min-h-[68vh] flex items-center justify-center text-center overflow-hidden bg-stone-950">
+      <video autoplay muted loop playsinline preload="metadata"
+             poster="img/3.jpeg"
+             class="hero-video absolute inset-0 w-full h-full object-cover opacity-45">
+        <source src="img/1.mp4" type="video/mp4">
+        <source src="img/2.mov" type="video/quicktime">
+      </video>
 
-<section class="bg-white border-b">
-  <div class="grid grid-cols-1 md:grid-cols-2">
-    <div class="p-8 flex flex-col items-center text-center border-r">
-      <i class="fas fa-clock text-2xl text-salonGold mb-3"></i>
-      <h3 class="font-bold uppercase text-sm tracking-widest">Öffnungszeiten</h3>
-      <p class="text-stone-600">Mo. – Sa.: 10:00 – 19:00 Uhr</p>
-      <p class="text-red-500 text-xs uppercase mt-1">Sonntag geschlossen</p>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/70"></div>
+
+      <div class="relative z-10 px-5 py-12 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-2 text-white text-sm font-semibold mb-5">
+          <i class="fas fa-location-dot text-salonGold"></i>
+          Altmarkt 9 · 03046 Cottbus
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black italic uppercase text-white drop-shadow-lg tracking-tight">
+          Pro Salon
+        </h1>
+
+        <p class="text-xl sm:text-2xl text-salonGold font-black italic mt-2">
+          Ohne Termin
+        </p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Pro+Salon+Cottbus+Altmarkt+9"
+           target="_blank"
+           rel="noopener"
+           class="mt-5 inline-flex items-center gap-2 text-white font-bold text-sm sm:text-base">
+          <span class="text-salonGold tracking-wide" aria-hidden="true">★★★★★</span>
+          <span>5,0 auf Google</span>
+          <i class="fas fa-arrow-up-right-from-square text-xs opacity-70"></i>
+        </a>
+
+        <p class="text-white/85 text-base mt-4 max-w-lg mx-auto">
+          Präzise Haarschnitte, Bartpflege und Barbierkunst direkt im Herzen von Cottbus.
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 mt-7 max-w-md mx-auto">
+          <a href="#preise"
+             class="tap-target bg-salonGold text-stone-950 rounded-xl px-4 py-3 font-black flex justify-center items-center gap-2 shadow-lg active:scale-[.98] transition">
+            <i class="fas fa-scissors"></i>
+            Preise
+          </a>
+
+          <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus"
+             target="_blank"
+             rel="noopener"
+             class="tap-target bg-white text-salonGreen rounded-xl px-4 py-3 font-black flex justify-center items-center gap-2 shadow-lg active:scale-[.98] transition">
+            <i class="fas fa-route"></i>
+            Route
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Schnellinfos -->
+    <section class="bg-white border-b border-stone-200">
+      <div class="max-w-5xl mx-auto grid grid-cols-2">
+        <div class="px-4 py-6 flex flex-col items-center text-center border-r border-stone-200">
+          <i class="fas fa-clock text-2xl text-salonGold mb-2"></i>
+          <h2 class="font-black text-salonGreen text-sm uppercase tracking-wide">Öffnungszeiten</h2>
+          <p class="text-stone-700 text-sm mt-1">Mo.–Sa. 10–19 Uhr</p>
+          <p class="text-stone-500 text-xs mt-1">Sonntag geschlossen</p>
+        </div>
+
+        <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus"
+           target="_blank"
+           rel="noopener"
+           class="px-4 py-6 flex flex-col items-center text-center hover:bg-stone-50 transition">
+          <i class="fas fa-location-dot text-2xl text-salonGold mb-2"></i>
+          <h2 class="font-black text-salonGreen text-sm uppercase tracking-wide">Standort</h2>
+          <p class="text-stone-700 text-sm mt-1">Altmarkt 9</p>
+          <span class="text-salonGreen text-xs font-bold mt-1">Route öffnen →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Preise bewusst weit oben -->
+    <section id="preise" class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 scroll-mt-24">
+      <div class="text-center mb-8">
+        <p class="text-salonGold font-black uppercase tracking-[0.18em] text-sm">Unsere Leistungen</p>
+        <h2 class="text-3xl sm:text-4xl font-black uppercase italic text-salonGreen mt-2">
+          Preise
+        </h2>
+        <p class="text-stone-600 mt-3 text-base">Transparent, fair und ohne Termin.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-soft border border-stone-100">
+          <i class="fas fa-scissors text-salonGold mb-3"></i>
+          <p class="font-black text-salonGreen leading-tight">Haarschnitt</p>
+          <p class="text-sm text-stone-500 mt-1">trocken</p>
+          <p class="text-2xl font-black mt-3">18 €</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-soft border border-stone-100">
+          <i class="fas fa-user-tie text-salonGold mb-3"></i>
+          <p class="font-black text-salonGreen leading-tight">Schnitt + Rasur</p>
+          <p class="text-sm text-stone-500 mt-1">inkl. Styling</p>
+          <p class="text-2xl font-black mt-3">30 €</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-soft border border-stone-100">
+          <i class="fas fa-droplet text-salonGold mb-3"></i>
+          <p class="font-black text-salonGreen leading-tight">Waschen + Schnitt</p>
+          <p class="text-sm text-stone-500 mt-1">inkl. Föhnen</p>
+          <p class="text-2xl font-black mt-3">23 €</p>
+        </div>
+
+        <div class="bg-salonGreen text-white rounded-2xl p-4 sm:p-5 shadow-soft border border-salonGreen">
+          <i class="fas fa-crown text-salonGold mb-3"></i>
+          <p class="font-black leading-tight">Pro Salon Paket</p>
+          <p class="text-sm text-white/65 mt-1">Rundum-Paket</p>
+          <p class="text-2xl font-black text-salonGold mt-3">49 €</p>
+        </div>
+      </div>
+
+      <details class="group bg-white rounded-2xl shadow-soft border border-stone-100 mt-5 overflow-hidden">
+        <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between font-black text-salonGreen tap-target">
+          <span>Alle Preise anzeigen</span>
+          <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+        </summary>
+
+        <div class="border-t border-stone-100 p-5 sm:p-6">
+          <div class="mb-8">
+            <h3 class="text-salonGold font-black uppercase italic border-b border-stone-200 pb-2 mb-2">
+              Haare & Bart
+            </h3>
+            <ul class="divide-y divide-stone-100">
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Haarschnitt (trocken)</span>
+                <span class="font-black whitespace-nowrap">18 €</span>
+              </li>
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Haarschnitt + Styling + Rasur</span>
+                <span class="font-black whitespace-nowrap">30 €</span>
+              </li>
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Haarschnitt mit Waschen & Föhnen</span>
+                <span class="font-black whitespace-nowrap">23 €</span>
+              </li>
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Haarschnitt mit Waschen & Föhnen + Rasur</span>
+                <span class="font-black whitespace-nowrap">33 €</span>
+              </li>
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Kinderhaarschnitt</span>
+                <span class="font-black whitespace-nowrap">17 €</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-salonGold font-black uppercase italic border-b border-stone-200 pb-2 mb-2">
+              Gesichtspflege
+            </h3>
+            <ul class="divide-y divide-stone-100">
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Rasur</span>
+                <span class="font-black whitespace-nowrap">15 €</span>
+              </li>
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Augenbrauen zupfen (Fadentechnik)</span>
+                <span class="font-black whitespace-nowrap">8 €</span>
+              </li>
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Gesichtshaarentfernung (Wachs & Fadentechnik)</span>
+                <span class="font-black whitespace-nowrap">12 €</span>
+              </li>
+              <li class="py-3 flex gap-4 justify-between items-start">
+                <span class="text-[15px]">Dampfer, Peeling, Wachs & Maske</span>
+                <span class="font-black whitespace-nowrap">39 €</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-salonGreen text-white p-5 rounded-xl border-l-4 border-salonGold shadow-lg mt-7">
+            <h3 class="text-salonGold font-black uppercase italic text-xl">Pro Salon Paket</h3>
+            <p class="text-sm text-white/75 mt-2 leading-relaxed">
+              Haarschnitt mit Waschen & Föhnen + Rasur + Wachs + Maske + Kopfmassage
+            </p>
+            <p class="text-3xl font-black italic mt-4">49 €</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- Salon -->
+    <section id="salon" class="bg-white border-y border-stone-200 py-12 md:py-16 scroll-mt-24">
+      <div class="max-w-6xl mx-auto">
+        <div class="px-4 sm:px-6 text-center mb-7">
+          <p class="text-salonGold font-black uppercase tracking-[0.18em] text-sm">Einblick</p>
+          <h2 class="text-3xl sm:text-4xl font-black uppercase italic text-salonGreen mt-2">
+            Unser Salon
+          </h2>
+          <p class="md:hidden text-sm text-stone-500 mt-2">
+            Nach links wischen, um mehr zu sehen.
+          </p>
+        </div>
+
+        <div class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar px-4 sm:px-6 pb-2">
+          <figure class="min-w-[82%] sm:min-w-[58%] md:min-w-0 snap-center overflow-hidden rounded-2xl shadow-soft bg-stone-200 aspect-[4/5]">
+            <img src="img/3.jpeg"
+                 alt="Innenansicht des Pro Salon Cottbus"
+                 width="800"
+                 height="1000"
+                 loading="lazy"
+                 decoding="async"
+                 class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </figure>
+
+          <figure class="min-w-[82%] sm:min-w-[58%] md:min-w-0 snap-center overflow-hidden rounded-2xl shadow-soft bg-stone-200 aspect-[4/5]">
+            <img src="img/4.jpg"
+                 alt="Atmosphäre im Pro Salon Cottbus"
+                 width="800"
+                 height="1000"
+                 loading="lazy"
+                 decoding="async"
+                 class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </figure>
+
+          <figure class="min-w-[82%] sm:min-w-[58%] md:min-w-0 snap-center overflow-hidden rounded-2xl shadow-soft bg-stone-200 aspect-[4/5]">
+            <img src="img/2.jpeg"
+                 alt="Kinder-Bereich im Pro Salon Cottbus"
+                 width="800"
+                 height="1000"
+                 loading="lazy"
+                 decoding="async"
+                 class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team als Swipe-Karten auf Mobile -->
+    <section id="team" class="max-w-6xl mx-auto py-12 md:py-16 scroll-mt-24">
+      <div class="px-4 sm:px-6 text-center mb-7">
+        <p class="text-salonGold font-black uppercase tracking-[0.18em] text-sm">Handwerk & Erfahrung</p>
+        <h2 class="text-3xl sm:text-4xl font-black uppercase italic text-salonGreen mt-2">
+          Unser Team
+        </h2>
+        <p class="md:hidden text-sm text-stone-500 mt-2">
+          Nach links wischen, um das Team zu sehen.
+        </p>
+      </div>
+
+      <div class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar px-4 sm:px-6 pb-3">
+        <article class="min-w-[84%] sm:min-w-[60%] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-soft border border-stone-100">
+          <img src="img/Ibrahim.jpeg"
+               alt="Ibrahim Al Hamidi"
+               width="700"
+               height="700"
+               loading="lazy"
+               decoding="async"
+               class="w-full aspect-[4/3] object-cover">
+          <div class="p-5">
+            <p class="text-salonGold text-xs font-black uppercase tracking-widest">Inhaber & Barbier</p>
+            <h3 class="text-2xl font-black uppercase italic text-salonGreen mt-1">Ibrahim Al Hamidi</h3>
+            <p class="text-stone-600 text-[15px] leading-relaxed mt-3">
+              Präzise Schnitte und traditionelle Barbierkunst direkt im Herzen von Cottbus.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4 text-xs font-bold">
+              <span class="bg-stone-100 rounded-full px-3 py-2">Haarschnitt</span>
+              <span class="bg-stone-100 rounded-full px-3 py-2">Bart</span>
+              <span class="bg-stone-100 rounded-full px-3 py-2">Styling</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="min-w-[84%] sm:min-w-[60%] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-soft border border-stone-100">
+          <div class="w-full aspect-[4/3] bg-salonGreen flex items-center justify-center" role="img" aria-label="Mohamad Kanjo">
+            <div class="w-24 h-24 rounded-full border-2 border-salonGold bg-white/10 flex items-center justify-center text-white text-4xl font-black italic">
+              MK
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="text-salonGold text-xs font-black uppercase tracking-widest">Barbier</p>
+            <h3 class="text-2xl font-black uppercase italic text-salonGreen mt-1">Mohamad Kanjo</h3>
+            <p class="text-stone-600 text-[15px] leading-relaxed mt-3">
+              Leidenschaft für perfekte Übergänge, moderne Schnitte und klassische Barbierkunst.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4 text-xs font-bold">
+              <span class="bg-stone-100 rounded-full px-3 py-2">Fade</span>
+              <span class="bg-stone-100 rounded-full px-3 py-2">Moderne Schnitte</span>
+              <span class="bg-stone-100 rounded-full px-3 py-2">Bart</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="min-w-[84%] sm:min-w-[60%] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-soft border border-stone-100">
+          <div class="w-full aspect-[4/3] bg-stone-800 flex items-center justify-center" role="img" aria-label="Hüseyin Khetabi">
+            <div class="w-24 h-24 rounded-full border-2 border-salonGold bg-white/10 flex items-center justify-center text-white text-4xl font-black italic">
+              HK
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="text-salonGold text-xs font-black uppercase tracking-widest">Barbier</p>
+            <h3 class="text-2xl font-black uppercase italic text-salonGreen mt-1">Hüseyin Khetabi</h3>
+            <p class="text-stone-600 text-[15px] leading-relaxed mt-3">
+              Handwerkliches Geschick, saubere Arbeit und ein Blick für jedes Detail.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4 text-xs font-bold">
+              <span class="bg-stone-100 rounded-full px-3 py-2">Haarschnitt</span>
+              <span class="bg-stone-100 rounded-full px-3 py-2">Detailarbeit</span>
+              <span class="bg-stone-100 rounded-full px-3 py-2">Bart</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bewertungen kompakter -->
+    <section id="bewertungen" class="bg-stone-100 border-t border-stone-200 py-12 md:py-16 scroll-mt-24">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center px-4 sm:px-6 mb-7">
+          <div class="text-salonGold text-xl tracking-wide" aria-label="5 von 5 Sternen">★★★★★</div>
+          <h2 class="text-3xl sm:text-4xl font-black uppercase italic text-salonGreen mt-2">
+            Das sagen unsere Kunden
+          </h2>
+          <p class="text-stone-600 mt-3 text-base">5,0 auf Google</p>
+        </div>
+
+        <div class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar px-4 sm:px-6 pb-3">
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold">
+            <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+            <p class="text-stone-700 italic text-[15px] leading-relaxed">
+              „Exzellenter Ort für einen Haarschnitt! Vielen Dank für den tollen Service – schnell, freundlich und professionell.“
+            </p>
+            <div class="border-t mt-5 pt-4">
+              <p class="font-black text-salonGreen uppercase text-xs italic">Lu** Ol**</p>
+              <p class="text-xs text-green-700 font-bold mt-1">
+                <i class="fas fa-circle-check"></i> Google Rezension
+              </p>
+            </div>
+          </article>
+
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold">
+            <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+            <p class="text-stone-700 italic text-[15px] leading-relaxed">
+              „Freundliches und professionelles Personal. Der Service war ausgezeichnet und ich gehe immer mit einem guten Haarschnitt nach Hause.“
+            </p>
+            <div class="border-t mt-5 pt-4">
+              <p class="font-black text-salonGreen uppercase text-xs italic">Th** Wo** Gr**</p>
+              <p class="text-xs text-green-700 font-bold mt-1">
+                <i class="fas fa-circle-check"></i> Google Rezension
+              </p>
+            </div>
+          </article>
+
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold">
+            <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+            <p class="text-stone-700 italic text-[15px] leading-relaxed">
+              „Hervorragender Haarschnitt. Professionell gemacht. Sehr freundliche Mitarbeiter, man fühlt sich direkt wohl.“
+            </p>
+            <div class="border-t mt-5 pt-4">
+              <p class="font-black text-salonGreen uppercase text-xs italic">An** Dc**</p>
+              <p class="text-xs text-green-700 font-bold mt-1">
+                <i class="fas fa-circle-check"></i> Google Rezension
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="px-4 sm:px-6 text-center mt-7">
+          <a href="https://www.google.com/maps/search/?api=1&query=Pro+Salon+Cottbus+Altmarkt+9"
+             target="_blank"
+             rel="noopener"
+             class="inline-flex tap-target items-center justify-center gap-2 bg-white border border-stone-200 text-salonGreen font-black rounded-xl px-5 py-3 shadow-sm">
+            Bewertungen auf Google ansehen
+            <i class="fas fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="bg-salonGreen text-white py-12 md:py-16 scroll-mt-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <i class="fas fa-location-dot text-3xl text-salonGold"></i>
+        <h2 class="text-3xl sm:text-4xl font-black uppercase italic mt-3">Besuch uns</h2>
+        <p class="text-white/80 mt-3 text-lg">Altmarkt 9 · 03046 Cottbus</p>
+        <p class="text-white/65 mt-1">Mo.–Sa. 10:00–19:00 Uhr · Ohne Termin</p>
+
+        <div class="grid grid-cols-2 gap-3 mt-7 max-w-md mx-auto">
+          <a href="tel:+4935512166380"
+             class="tap-target bg-salonGold text-stone-950 rounded-xl px-4 py-3 font-black flex items-center justify-center gap-2">
+            <i class="fas fa-phone"></i>
+            Anrufen
+          </a>
+          <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus"
+             target="_blank"
+             rel="noopener"
+             class="tap-target bg-white text-salonGreen rounded-xl px-4 py-3 font-black flex items-center justify-center gap-2">
+            <i class="fas fa-route"></i>
+            Route
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-stone-950 text-white px-4 pt-10 pb-28 md:pb-10 text-center">
+    <p class="text-salonGold font-bold italic uppercase tracking-widest">Folge Pro Salon</p>
+
+    <div class="flex justify-center gap-4 mt-5 mb-8">
+      <a href="https://www.instagram.com/pro_salon9"
+         target="_blank"
+         rel="noopener"
+         aria-label="Pro Salon auf Instagram"
+         class="tap-target w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-2xl hover:text-salonGold transition">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@pro.salon4"
+         target="_blank"
+         rel="noopener"
+         aria-label="Pro Salon auf TikTok"
+         class="tap-target w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-2xl hover:text-salonGold transition">
+        <i class="fab fa-tiktok"></i>
+      </a>
     </div>
-    <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus" target="_blank"
-       class="p-8 flex flex-col items-center text-center hover:bg-stone-50 transition">
-      <i class="fas fa-location-dot text-2xl text-salonGold mb-3"></i>
-      <h3 class="font-bold uppercase text-sm tracking-widest">Standort</h3>
-      <p class="text-stone-600">Altmarkt 9, 03046 Cottbus</p>
-      <span class="text-salonGreen text-[10px] font-bold underline mt-2">Route öffnen</span>
-    </a>
-  </div>
-</section>
 
-<section class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-8 border-b">
-  <img src="img/Ibrahim.jpeg" alt="Ibrahim Al Hamidi" class="w-40 h-40 rounded-2xl object-cover shadow-lg border-2 border-salonGold">
-  <div class="text-center md:text-left">
-    <h2 class="text-2xl font-black uppercase italic text-salonGreen">Ibrahim Al Hamidi</h2>
-    <p class="text-stone-500 italic uppercase tracking-widest text-xs font-bold mb-2">Inhaber & Experte</p>
-    <p class="text-stone-600">Willkommen im Pro Salon. Wir stehen für präzise Schnitte und traditionelle Barbierkunst direkt im Herzen von Cottbus.</p>
-  </div>
-</section>
-<!--
-<section class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-8 border-b">
-  <img src="img/Wael.jpeg" alt="Wael Shamdeen" class="w-40 h-40 rounded-2xl object-cover shadow-lg border-2 border-salonGold">
-  <div class="text-center md:text-left">
-    <h2 class="text-2xl font-black uppercase italic text-salonGreen">Wael Shamdeen</h2>
-    <p class="text-stone-500 italic uppercase tracking-widest text-xs font-bold mb-2">Barbier & Experte</p>
-    <p class="text-stone-600">Wael Shamdeen bringt seine langjährige Erfahrung und Leidenschaft für moderne Schnitte und klassische Barbierkunst in den Pro Salon. Lassen Sie sich von seiner Expertise überzeugen.</p>
-  </div>
-</section>
-  -->
-  <!-- Mohamad Kanjo -->
-<section class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-8 border-b">
-  <img src="img/Kanjo.jpeg" alt="Mohamad Kanjo" class="w-40 h-40 rounded-2xl object-cover shadow-lg border-2 border-salonGold">
-  <div class="text-center md:text-left">
-    <h2 class="text-2xl font-black uppercase italic text-salonGreen">Mohamad Kanjo</h2>
-    <p class="text-stone-500 italic uppercase tracking-widest text-xs font-bold mb-2">Barbier</p>
-    <p class="text-stone-600">Mohamad bringt seine Leidenschaft für perfekte Übergänge und klassische Barbierkunst in den Pro Salon. Ein Experte für moderne Schnitte.</p>
-  </div>
-</section>
+    <p class="text-xs text-white/50 uppercase tracking-[0.2em]">Inhaber</p>
+    <p class="font-bold italic uppercase mt-1">Ibrahim Al Hamidi</p>
 
-<!-- Hüseyin Khetabi -->
-<section class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-8 border-b">
-  <img src="img/Khetabi.jpeg" alt="Hüseyin Khetabi" class="w-40 h-40 rounded-2xl object-cover shadow-lg border-2 border-salonGold">
-  <div class="text-center md:text-left">
-    <h2 class="text-2xl font-black uppercase italic text-salonGreen">Hüseyin Khetabi</h2>
-    <p class="text-stone-500 italic uppercase tracking-widest text-xs font-bold mb-2">Barbier</p>
-    <p class="text-stone-600">Hüseyin ergänzt das Team mit handwerklichem Geschick und dem Blick fürs Detail. Lassen Sie sich von seinem exzellenten Service überzeugen.</p>
-  </div>
-</section>
-
-<section class="max-w-2xl mx-auto px-6 py-16" id="preise">
-  <h2 class="text-3xl font-black text-center uppercase italic text-salonGreen underline decoration-salonGold decoration-4 underline-offset-8 mb-12">
-    Preisliste
-  </h2>
-
-  <div class="mb-12">
-    <h3 class="text-salonGold font-black uppercase italic border-b pb-2 mb-4">Haare & Bart</h3>
-    <ul class="space-y-3 text-sm">
-      <li class="flex justify-between"><span>Haarschnitt (trocken)</span><span class="font-bold">18.00 €</span></li>
-      <li class="flex justify-between"><span>Haarschnitt (trocken) + Styling + Rasur</span><span class="font-bold">30.00 €</span></li>
-      <li class="flex justify-between"><span>Haarschnitt mit Waschen & Föhnen</span><span class="font-bold">23.00 €</span></li>
-      <li class="flex justify-between"><span>Haarschnitt mit Waschen & Föhnen + Rasur</span><span class="font-bold">33.00 €</span></li>
-      <li class="flex justify-between italic"><span>Kinderhaarschnitt</span><span class="font-bold">17.00 €</span></li>
-    </ul>
-  </div>
-
-  <div class="mb-12">
-    <h3 class="text-salonGold font-black uppercase italic border-b pb-2 mb-4">Gesichtspflege</h3>
-    <ul class="space-y-3 text-sm">
-      <li class="flex justify-between"><span>Rasur</span><span class="font-bold">15.00 €</span></li>
-      <li class="flex justify-between"><span>Augenbrauen zupfen (Fadentechnik)</span><span class="font-bold">8.00 €</span></li>
-      <li class="flex justify-between"><span>Gesichtshaarentfernung (Wachs & Fadentechnik)</span><span class="font-bold">12.00 €</span></li>
-      <li class="flex justify-between font-semibold">
-        <span>Dampfer, Peeling, Wachs & Maske</span>
-        <span class="font-bold">39.00€</span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="bg-salonGreen text-white p-6 rounded-xl border-l-4 border-salonGold shadow-xl">
-    <h3 class="text-salonGold font-black uppercase italic text-xl mb-2">Pro Salon Paket</h3>
-    <p class="text-xs italic opacity-70 mb-4">
-      Haarschnitt mit Waschen & Föhnen + Rasur + Wachs + Maske + Kopfmassage
-    </p>
-    <p class="text-3xl font-black italic">49.00 €</p>
-  </div>
-</section>
-
-<section class="max-w-6xl mx-auto px-6 py-16 border-t border-stone-200">
-  <h2 class="text-3xl font-black text-center uppercase italic text-salonGreen mb-12">Unser Salon</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div class="overflow-hidden rounded-xl shadow-lg bg-stone-200 aspect-[4/5]">
-      <img src="img/3.jpeg" alt="Innenansicht" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+    <div class="flex justify-center gap-4 text-xs uppercase tracking-wider text-white/55 mt-7">
+      <a href="impressum.html" class="hover:text-salonGold">Impressum</a>
+      <span aria-hidden="true">·</span>
+      <a href="Datenschutz.html" class="hover:text-salonGold">Datenschutz</a>
     </div>
-    <div class="overflow-hidden rounded-xl shadow-lg bg-stone-200 aspect-[4/5]">
-      <img src="img/4.jpg" alt="Atmosphäre" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+  </footer>
+
+  <!-- Feste Navigation nur auf Handy -->
+  <nav aria-label="Mobile Schnellnavigation"
+       class="mobile-bottom-bar md:hidden fixed bottom-0 inset-x-0 z-[60] bg-white/95 backdrop-blur-xl border-t border-stone-200 shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
+    <div class="grid grid-cols-4 px-2 pt-2">
+      <a href="tel:+4935512166380"
+         class="tap-target flex flex-col items-center justify-center gap-1 text-salonGreen font-bold text-xs">
+        <i class="fas fa-phone text-lg"></i>
+        <span>Anrufen</span>
+      </a>
+
+      <a href="https://www.google.com/maps/dir//Altmarkt+9,+03046+Cottbus"
+         target="_blank"
+         rel="noopener"
+         class="tap-target flex flex-col items-center justify-center gap-1 text-salonGreen font-bold text-xs">
+        <i class="fas fa-route text-lg"></i>
+        <span>Route</span>
+      </a>
+
+      <a href="#preise"
+         class="tap-target flex flex-col items-center justify-center gap-1 text-salonGreen font-bold text-xs">
+        <i class="fas fa-scissors text-lg"></i>
+        <span>Preise</span>
+      </a>
+
+      <a href="https://www.instagram.com/pro_salon9"
+         target="_blank"
+         rel="noopener"
+         class="tap-target flex flex-col items-center justify-center gap-1 text-salonGreen font-bold text-xs">
+        <i class="fab fa-instagram text-xl"></i>
+        <span>Instagram</span>
+      </a>
     </div>
-    <div class="overflow-hidden rounded-xl shadow-lg bg-stone-200 aspect-[4/5]">
-      <img src="img/2.jpeg" alt="Kinder-Bereich" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-    </div>
-  </div>
-</section>
+  </nav>
 
+  <script>
+    (() => {
+      const statusBar = document.getElementById('status-bar');
 
+      const dayMap = {
+        Mo: 1,
+        Di: 2,
+        Mi: 3,
+        Do: 4,
+        Fr: 5,
+        Sa: 6,
+        So: 0
+      };
 
-<section class="bg-stone-100 py-16 border-t border-stone-200">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-black uppercase italic text-salonGreen underline decoration-salonGold decoration-4 underline-offset-8 mb-4">
-      Das sagen unsere Kunden
-    </h2>
-    <p class="text-stone-600 italic mb-12">Es gibt bereits viele positive Erfahrungen – machen auch Sie Ihre bei uns!</p>
+      function berlinTime() {
+        const parts = new Intl.DateTimeFormat('de-DE', {
+          timeZone: 'Europe/Berlin',
+          weekday: 'short',
+          hour: '2-digit',
+          minute: '2-digit',
+          hourCycle: 'h23'
+        }).formatToParts(new Date());
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        const data = {};
+        for (const part of parts) {
+          if (part.type !== 'literal') {
+            data[part.type] = part.value.replace('.', '');
+          }
+        }
 
-      <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-salonGold flex flex-col justify-between text-left">
-        <div>
-          <div class="flex text-salonGold mb-4 text-sm">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-stone-700 italic mb-6 text-sm leading-relaxed">
-            "Exzellenter Ort für einen Haarschnitt! Vielen Dank an Wael für den tollen Service – schnell, freundlich und professionell."
-          </p>
-        </div>
-        <div class="border-t pt-4">
-          <p class="font-bold text-salonGreen uppercase text-xs italic">Lu** Ol**</p>
-          <p class="text-[9px] text-green-600 font-bold uppercase tracking-widest mt-1">
-            <i class="fas fa-check-circle"></i> Google Rezension
-          </p>
-        </div>
-      </div>
+        return {
+          day: dayMap[data.weekday],
+          hour: Number(data.hour),
+          minute: Number(data.minute)
+        };
+      }
 
-      <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-salonGold flex flex-col justify-between text-left">
-        <div>
-          <div class="flex text-salonGold mb-4 text-sm">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-stone-700 italic mb-6 text-sm leading-relaxed">
-            "Freundliches und professionelles Personal. Der Service war ausgezeichnet und ich gehe immer mit einem guten Haarschnitt nach Hause."
-          </p>
-        </div>
-        <div class="border-t pt-4">
-          <p class="font-bold text-salonGreen uppercase text-xs italic">Th** Wo** Gr**</p>
-          <p class="text-[9px] text-green-600 font-bold uppercase tracking-widest mt-1">
-            <i class="fas fa-check-circle"></i> Google Rezension
-          </p>
-        </div>
-      </div>
+      function updateStatus() {
+        const { day, hour, minute } = berlinTime();
+        const totalMinutes = hour * 60 + minute;
+        const opening = 10 * 60;
+        const closing = 19 * 60;
+        const isWorkday = day >= 1 && day <= 6;
+        const open = isWorkday && totalMinutes >= opening && totalMinutes < closing;
 
-      <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-salonGold flex flex-col justify-between text-left">
-        <div>
-          <div class="flex text-salonGold mb-4 text-sm">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-stone-700 italic mb-6 text-sm leading-relaxed">
-            "Hervorragender Haarschnitt. Professionell gemacht. Sehr freundliche Mitarbeiter, man fühlt sich direkt wohl."
-          </p>
-        </div>
-        <div class="border-t pt-4">
-          <p class="font-bold text-salonGreen uppercase text-xs italic">An** Dc**</p>
-          <p class="text-[9px] text-green-600 font-bold uppercase tracking-widest mt-1">
-            <i class="fas fa-check-circle"></i> Google Rezension
-          </p>
-        </div>
-      </div>
+        let message;
 
+        if (open) {
+          message = '● Jetzt geöffnet · heute bis 19:00 Uhr';
+        } else if (isWorkday && totalMinutes < opening) {
+          message = '○ Noch geschlossen · heute ab 10:00 Uhr geöffnet';
+        } else if (day >= 1 && day <= 5) {
+          message = '○ Geschlossen · morgen ab 10:00 Uhr geöffnet';
+        } else {
+          message = '○ Geschlossen · Montag ab 10:00 Uhr geöffnet';
+        }
 
-      <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-salonGold flex flex-col justify-between text-left">
-        <div>
-          <div class="flex text-salonGold mb-4 text-sm">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-stone-700 italic mb-6 text-sm leading-relaxed">
-            "Wo soll ich anfangen 🤯
-            So ein toller Salon, angefangen mit dem tollen Personal, einfach wunderbare Begrüßung mit nem netten Plausch 😁😊
-            Dazu ein sehr schöner ansprechender Laden 🔥
-            Nicht zu vergessen, die Umsetzung der gewünschten Frisur... Bombastisch 🤌🏻"
-          </p>
-        </div>
-        <div class="border-t pt-4">
-          <p class="font-bold text-salonGreen uppercase text-xs italic">Ke** Wi**</p>
-          <p class="text-[9px] text-green-600 font-bold uppercase tracking-widest mt-1">
-            <i class="fas fa-check-circle"></i> Google Rezension
-          </p>
-        </div>
-      </div>
+        statusBar.textContent = message;
+        statusBar.className =
+          'w-full px-4 py-2 text-center text-[13px] font-bold transition-colors duration-300 ' +
+          (open ? 'bg-green-700 text-white' : 'bg-stone-900 text-white');
+      }
 
-      <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-salonGold flex flex-col justify-between text-left">
-        <div>
-          <div class="flex text-salonGold mb-4 text-sm">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-stone-700 italic mb-6 text-sm leading-relaxed">
-            "Very good haircut and overall experience"
-          </p>
-        </div>
-        <div class="border-t pt-4">
-          <p class="font-bold text-salonGreen uppercase text-xs italic">Sa** Ra**</p>
-          <p class="text-[9px] text-green-600 font-bold uppercase tracking-widest mt-1">
-            <i class="fas fa-check-circle"></i> Google Rezension
-          </p>
-        </div>
-      </div>
+      updateStatus();
+      setInterval(updateStatus, 60000);
+    })();
+  </script>
 
-      <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-salonGold flex flex-col justify-between text-left">
-        <div>
-          <div class="flex text-salonGold mb-4 text-sm">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-stone-700 italic mb-6 text-sm leading-relaxed">
-            "Sehr freundlicher und professioneller Service Der Haarschnitt war genau so, wie ich es mir vorgestellt habe. Angenehme Atmosphäre und saubere Arbeit. Sehr empfehlenswert ⭐⭐⭐⭐⭐"
-          </p>
-        </div>
-        <div class="border-t pt-4">
-          <p class="font-bold text-salonGreen uppercase text-xs italic">Om** Al**</p>
-          <p class="text-[9px] text-green-600 font-bold uppercase tracking-widest mt-1">
-            <i class="fas fa-check-circle"></i> Google Rezension
-          </p>
-        </div>
-      </div>
-
-
-    </div>
-<footer class="bg-stone-900 text-white py-12 text-center">
-  <p class="text-salonGold font-bold italic uppercase tracking-widest mb-6">Social Media</p>
-  <div class="flex justify-center gap-10 mb-10 text-4xl">
-    <a href="https://www.instagram.com/pro_salon9" target="_blank" class="hover:text-salonGold transition"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@pro.salon4" target="_blank" class="hover:text-salonGold transition"><i class="fab fa-tiktok"></i></a>
-  </div>
-
-  <p class="text-xs opacity-40 uppercase tracking-[0.3em]">Inhaber</p>
-  <p class="font-bold italic uppercase mb-6">Ibrahim Al Hamidi</p>
-
-  <div class="flex justify-center gap-4 text-[10px] uppercase tracking-widest opacity-50">
-    <a href="impressum.html" class="hover:text-salonGold">Impressum</a>
-    <span>|</span>
-    <a href="Datenschutz.html" class="hover:text-salonGold">Datenschutz</a>
-  </div>
-</footer>
-
-<script>
-  (() => {
-    const statusBar = document.getElementById('status-bar');
-    function updateStatus() {
-      const now = new Date();
-      const day = now.getDay();
-      const hour = now.getHours();
-      const open = day !== 0 && hour >= 10 && hour < 19;
-      statusBar.textContent = open ? '● Wir haben gerade für Sie geöffnet' : '○ Momentan haben wir geschlossen';
-      statusBar.className = 'w-full py-2 text-center text-xs font-bold uppercase tracking-widest transition-colors duration-500 ' +
-        (open ? 'bg-green-600 text-white' : 'bg-red-600 text-white');
-    }
-    updateStatus();
-    setInterval(updateStatus, 60000);
-  })();
-</script>
-
-    <script data-goatcounter="https://pro-salon.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-
+  <script data-goatcounter="https://pro-salon.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
