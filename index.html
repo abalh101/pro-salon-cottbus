@@ -8,6 +8,7 @@
   <meta name="description" content="Pro Salon Cottbus – Barbershop am Altmarkt 9. Professionelle Haarschnitte, Bartpflege und Gesichtspflege ohne Termin.">
   <meta name="theme-color" content="#1a3c34">
   <meta name="format-detection" content="telephone=yes">
+  <link rel="preload" href="img/1.mp4" as="video" type="video/mp4">
 
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="img/logo.jpg" type="image/jpeg">
@@ -60,6 +61,21 @@
       min-width: 44px;
     }
 
+    .hero-video {
+      opacity: 0;
+      transition: opacity .55s ease;
+    }
+
+    .hero-video.is-ready {
+      opacity: .48;
+    }
+
+    .team-photo-fallback {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(197,160,89,.35), transparent 34%),
+        linear-gradient(135deg, #1a3c34, #102620);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto !important;
@@ -84,7 +100,7 @@
     "name": "Pro Salon",
     "image": "https://abalh101.github.io/pro-salon-cottbus/img/logo.jpg",
     "url": "https://abalh101.github.io/pro-salon-cottbus/",
-    "telephone": "+49 355 12166380",
+    "telephone": "+49 1575 3672534",
     "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
@@ -144,7 +160,7 @@
         </div>
       </a>
 
-      <a href="tel:+4935512166380"
+      <a href="tel:+4915753672534"
          class="tap-target bg-salonGreen text-white px-4 rounded-full text-sm font-bold flex items-center gap-2 active:scale-95 transition"
          aria-label="Pro Salon anrufen">
         <i class="fas fa-phone"></i>
@@ -156,11 +172,22 @@
   <main>
     <!-- Hero -->
     <header class="relative min-h-[54svh] md:min-h-[68vh] flex items-center justify-center text-center overflow-hidden bg-stone-950">
-      <video autoplay muted loop playsinline preload="metadata"
+      <img src="img/3.jpeg"
+           alt=""
+           aria-hidden="true"
+           fetchpriority="high"
+           decoding="async"
+           class="absolute inset-0 w-full h-full object-cover opacity-45">
+
+      <video id="hero-video"
+             autoplay
+             muted
+             loop
+             playsinline
+             preload="auto"
              poster="img/3.jpeg"
-             class="hero-video absolute inset-0 w-full h-full object-cover opacity-45">
+             class="hero-video absolute inset-0 w-full h-full object-cover">
         <source src="img/1.mp4" type="video/mp4">
-        <source src="img/2.mov" type="video/quicktime">
       </video>
 
       <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/70"></div>
@@ -425,10 +452,19 @@
         </article>
 
         <article class="min-w-[84%] sm:min-w-[60%] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-soft border border-stone-100">
-          <div class="w-full aspect-[4/3] bg-salonGreen flex items-center justify-center" role="img" aria-label="Mohamad Kanjo">
-            <div class="w-24 h-24 rounded-full border-2 border-salonGold bg-white/10 flex items-center justify-center text-white text-4xl font-black italic">
-              MK
+          <div class="relative aspect-[4/3] overflow-hidden team-photo-fallback">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+              <span class="text-5xl font-black italic text-salonGold">MK</span>
+              <span class="text-xs font-bold uppercase tracking-widest mt-2 text-white/70">Mohamad Kanjo</span>
             </div>
+            <img src="img/Kanjo.jpeg"
+                 alt="Mohamad Kanjo"
+                 width="700"
+                 height="700"
+                 loading="lazy"
+                 decoding="async"
+                 onerror="this.style.display='none'"
+                 class="relative z-10 w-full h-full object-cover">
           </div>
           <div class="p-5">
             <p class="text-salonGold text-xs font-black uppercase tracking-widest">Barbier</p>
@@ -445,10 +481,19 @@
         </article>
 
         <article class="min-w-[84%] sm:min-w-[60%] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-soft border border-stone-100">
-          <div class="w-full aspect-[4/3] bg-stone-800 flex items-center justify-center" role="img" aria-label="Hüseyin Khetabi">
-            <div class="w-24 h-24 rounded-full border-2 border-salonGold bg-white/10 flex items-center justify-center text-white text-4xl font-black italic">
-              HK
+          <div class="relative aspect-[4/3] overflow-hidden team-photo-fallback">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+              <span class="text-5xl font-black italic text-salonGold">HK</span>
+              <span class="text-xs font-bold uppercase tracking-widest mt-2 text-white/70">Hüseyin Khetabi</span>
             </div>
+            <img src="img/Khetabi.jpeg"
+                 alt="Hüseyin Khetabi"
+                 width="700"
+                 height="700"
+                 loading="lazy"
+                 decoding="async"
+                 onerror="this.style.display='none'"
+                 class="relative z-10 w-full h-full object-cover">
           </div>
           <div class="p-5">
             <p class="text-salonGold text-xs font-black uppercase tracking-widest">Barbier</p>
@@ -474,15 +519,17 @@
           <h2 class="text-3xl sm:text-4xl font-black uppercase italic text-salonGreen mt-2">
             Das sagen unsere Kunden
           </h2>
-          <p class="text-stone-600 mt-3 text-base">5,0 auf Google</p>
+          <p class="text-stone-600 mt-3 text-base">5,0 auf Google · 6 ausgewählte Bewertungen</p>
         </div>
 
         <div class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar px-4 sm:px-6 pb-3">
-          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold">
-            <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
-            <p class="text-stone-700 italic text-[15px] leading-relaxed">
-              „Exzellenter Ort für einen Haarschnitt! Vielen Dank für den tollen Service – schnell, freundlich und professionell.“
-            </p>
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold flex flex-col justify-between">
+            <div>
+              <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+              <p class="text-stone-700 italic text-[15px] leading-relaxed">
+                „Exzellenter Ort für einen Haarschnitt! Vielen Dank für den tollen Service – schnell, freundlich und professionell.“
+              </p>
+            </div>
             <div class="border-t mt-5 pt-4">
               <p class="font-black text-salonGreen uppercase text-xs italic">Lu** Ol**</p>
               <p class="text-xs text-green-700 font-bold mt-1">
@@ -491,11 +538,13 @@
             </div>
           </article>
 
-          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold">
-            <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
-            <p class="text-stone-700 italic text-[15px] leading-relaxed">
-              „Freundliches und professionelles Personal. Der Service war ausgezeichnet und ich gehe immer mit einem guten Haarschnitt nach Hause.“
-            </p>
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold flex flex-col justify-between">
+            <div>
+              <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+              <p class="text-stone-700 italic text-[15px] leading-relaxed">
+                „Freundliches und professionelles Personal. Der Service war ausgezeichnet und ich gehe immer mit einem guten Haarschnitt nach Hause.“
+              </p>
+            </div>
             <div class="border-t mt-5 pt-4">
               <p class="font-black text-salonGreen uppercase text-xs italic">Th** Wo** Gr**</p>
               <p class="text-xs text-green-700 font-bold mt-1">
@@ -504,13 +553,60 @@
             </div>
           </article>
 
-          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold">
-            <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
-            <p class="text-stone-700 italic text-[15px] leading-relaxed">
-              „Hervorragender Haarschnitt. Professionell gemacht. Sehr freundliche Mitarbeiter, man fühlt sich direkt wohl.“
-            </p>
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold flex flex-col justify-between">
+            <div>
+              <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+              <p class="text-stone-700 italic text-[15px] leading-relaxed">
+                „Hervorragender Haarschnitt. Professionell gemacht. Sehr freundliche Mitarbeiter, man fühlt sich direkt wohl.“
+              </p>
+            </div>
             <div class="border-t mt-5 pt-4">
               <p class="font-black text-salonGreen uppercase text-xs italic">An** Dc**</p>
+              <p class="text-xs text-green-700 font-bold mt-1">
+                <i class="fas fa-circle-check"></i> Google Rezension
+              </p>
+            </div>
+          </article>
+
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold flex flex-col justify-between">
+            <div>
+              <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+              <p class="text-stone-700 italic text-[15px] leading-relaxed">
+                „So ein toller Salon: wunderbare Begrüßung, sehr schöner Laden und die gewünschte Frisur wurde bombastisch umgesetzt.“
+              </p>
+            </div>
+            <div class="border-t mt-5 pt-4">
+              <p class="font-black text-salonGreen uppercase text-xs italic">Ke** Wi**</p>
+              <p class="text-xs text-green-700 font-bold mt-1">
+                <i class="fas fa-circle-check"></i> Google Rezension
+              </p>
+            </div>
+          </article>
+
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold flex flex-col justify-between">
+            <div>
+              <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+              <p class="text-stone-700 italic text-[15px] leading-relaxed">
+                „Very good haircut and overall experience.“
+              </p>
+            </div>
+            <div class="border-t mt-5 pt-4">
+              <p class="font-black text-salonGreen uppercase text-xs italic">Sa** Ra**</p>
+              <p class="text-xs text-green-700 font-bold mt-1">
+                <i class="fas fa-circle-check"></i> Google Rezension
+              </p>
+            </div>
+          </article>
+
+          <article class="min-w-[86%] sm:min-w-[60%] md:min-w-0 snap-center bg-white p-6 rounded-2xl shadow-soft border-t-4 border-salonGold flex flex-col justify-between">
+            <div>
+              <div class="text-salonGold text-sm mb-4" aria-hidden="true">★★★★★</div>
+              <p class="text-stone-700 italic text-[15px] leading-relaxed">
+                „Sehr freundlicher und professioneller Service. Der Haarschnitt war genau so, wie ich es mir vorgestellt habe. Angenehme Atmosphäre und saubere Arbeit.“
+              </p>
+            </div>
+            <div class="border-t mt-5 pt-4">
+              <p class="font-black text-salonGreen uppercase text-xs italic">Om** Al**</p>
               <p class="text-xs text-green-700 font-bold mt-1">
                 <i class="fas fa-circle-check"></i> Google Rezension
               </p>
@@ -539,7 +635,7 @@
         <p class="text-white/65 mt-1">Mo.–Sa. 10:00–19:00 Uhr · Ohne Termin</p>
 
         <div class="grid grid-cols-2 gap-3 mt-7 max-w-md mx-auto">
-          <a href="tel:+4935512166380"
+          <a href="tel:+4915753672534"
              class="tap-target bg-salonGold text-stone-950 rounded-xl px-4 py-3 font-black flex items-center justify-center gap-2">
             <i class="fas fa-phone"></i>
             Anrufen
@@ -590,7 +686,7 @@
   <nav aria-label="Mobile Schnellnavigation"
        class="mobile-bottom-bar md:hidden fixed bottom-0 inset-x-0 z-[60] bg-white/95 backdrop-blur-xl border-t border-stone-200 shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
     <div class="grid grid-cols-4 px-2 pt-2">
-      <a href="tel:+4935512166380"
+      <a href="tel:+4915753672534"
          class="tap-target flex flex-col items-center justify-center gap-1 text-salonGreen font-bold text-xs">
         <i class="fas fa-phone text-lg"></i>
         <span>Anrufen</span>
@@ -685,6 +781,27 @@
 
       updateStatus();
       setInterval(updateStatus, 60000);
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const video = document.getElementById('hero-video');
+      if (!video) return;
+
+      const showVideo = () => video.classList.add('is-ready');
+
+      if (video.readyState >= 3) {
+        showVideo();
+      } else {
+        video.addEventListener('canplay', showVideo, { once: true });
+        video.addEventListener('playing', showVideo, { once: true });
+      }
+
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
     })();
   </script>
 
